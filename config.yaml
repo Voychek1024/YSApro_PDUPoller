@@ -1,0 +1,13 @@
+pdu_info:
+  -
+    ip: "192.168.0.2"  # single pdu inst. ip
+    user: "admin"      # single pdu inst. userName
+    pass: "admin"      # single pdu inst. password
+  -
+    ip: "192.168.0.3"
+    user: "admin"
+    pass: "admin"
+
+scrape:
+  interval: 10s        # Warning: interval must < 1m
+  port: 18050          # Prometheus port
