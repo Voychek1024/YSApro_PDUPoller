@@ -1,0 +1,6 @@
+services:
+  ysapro_pdupoller:
+    build: .
+    restart: always
+    ports:
+      - "18050:18050"
