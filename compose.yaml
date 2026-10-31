@@ -1,5 +1,6 @@
 services:
   ysapro_pdupoller:
+    container_name: "ysapro_pdupoller"
     build: .
     restart: always
     ports:

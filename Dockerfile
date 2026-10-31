@@ -1,6 +1,9 @@
 # syntax=docker/dockerfile:1
 
-FROM golang:1.25-alpine
+FROM golang:1.26-alpine
+
+# Fix CVE-2026-111943
+RUN apk update && apk upgrade --no-cache ca-certificates
 
 # Set destination for COPY
 WORKDIR /app
@@ -17,7 +20,7 @@ COPY *.go ./
 RUN CGO_ENABLED=0 GOOS=linux go build -o /poller
 
 # Copy config
-COPY config.yaml /config.yaml
+COPY config.yaml ./
 EXPOSE 18050
 
 # Forward logs to docker-cli
